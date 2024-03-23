@@ -18,7 +18,7 @@ const navbar = () => {
     console.log(theme)
     return (
         <div>
-            <div className="navbar shadow-xl bg-base-100 ">
+            <div className="navbar shadow-xl bg-base-100 fixed z-10 ">
                 <NavLink className="flex-1 font-bold">
                     <a className="btn btn-ghost font-bold gap-0 text-secondary text-4xl">React<span className="text-primary">Router</span></a>
                 </NavLink>

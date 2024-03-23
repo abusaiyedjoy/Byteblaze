@@ -1,18 +1,13 @@
 
-import Navbar from './../Components/navbar';
+import Wave from '../assets/wave.svg'
+import Hero from "../Components/hero";
 const Home = () => {
     return (
-        <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content text-center">
-                    <div className="max-w-md">
-                        <h1 className="text-5xl font-bold">Hello there</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
-                    </div>
-                </div>
-            </div>
+        <div className=' flex relative flex-col justify-center items-center min-h-[calc(100vh-196px)]'>
+            <Hero></Hero>
+            <img className="w-full absolute bottom-0" src={Wave} alt="" />
         </div>
+
     );
 };
 
