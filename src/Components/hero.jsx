@@ -4,7 +4,7 @@ const hero = () => {
         <div className="hero -mt-20">
             <div className=" text-center">
                 <div className="max-w-lg">
-                    <h1 className="text-4xl text-primary font-bold">Welcome To <span className="text-secondary">ReactRouter</span></h1>
+                    <h1 className="text-4xl font-bold">Welcome To <span className="bg-300% bg-gradient-to-r from-primary via-blue-500 to-secondary text-transparent bg-clip-text animate-gradient">ReactRouter</span></h1>
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <div className="flex gap-5 justify-center items-center">
                         <NavLink to="/blogs" className="relative inline-flex items-center justify-center px-6 py-3 text-lg font-medium tracking-tighter text-white bg-gray-800 rounded-md group">
