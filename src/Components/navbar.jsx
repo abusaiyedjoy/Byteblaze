@@ -15,7 +15,6 @@ const navbar = () => {
             setTheme('light')
         }
     }
-    console.log(theme)
     return (
         <div>
             <div className="navbar shadow-xl bg-base-100 fixed z-10 ">

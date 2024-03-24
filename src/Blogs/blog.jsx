@@ -1,8 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import BlogCard from './blogcard';
-
+import Spinner from "../Components/spinner";
 const blog = () => {
     const blog = useLoaderData()
+    const Navigation =useNavigation();
+    if(Navigation.state === 'loading') return <Spinner></Spinner>
     return (
         <div>
             <section className="">
