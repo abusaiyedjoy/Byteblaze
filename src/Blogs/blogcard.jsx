@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import placeholderImage from '../assets/404.jpg'
-const blogCard = ({blog}) => {
-const {cover_image,id,published_at,title,description}=blog;
+import { MdDeleteForever } from 'react-icons/md'
+const blogCard = ({ blog, deletable, handleDelete }) => {
+    const { cover_image, id, published_at, title, description } = blog;
     return (
+        <div className="flex relative">
             <Link to={`/blog/${id}`} className="max-w-sm transition border-2 border-solid border-primary hover:border-secondary hover:scale-105 border-opacity-30 mx-auto group hover:no-underline focus:no-underline">
                 <img role="presentation" className="object-cover w-full rounded h-44 bg-gray-500" src={cover_image || placeholderImage} />
                 <div className="p-6 space-y-2">
@@ -11,6 +13,18 @@ const {cover_image,id,published_at,title,description}=blog;
                     <p>{description}</p>
                 </div>
             </Link>
+            {deletable && (
+                <div
+                    onClick={() => handleDelete(blog.id)}
+                    className='bg-primary p-3 ml-5 rounded-full hover:bg-secondary group  cursor-pointer hover:scale-105 absolute -top-5 -right-5'
+                >
+                    <MdDeleteForever
+                        size={20}
+                        className='text-secondary group-hover:text-primary'
+                    />
+                </div>
+            )}
+        </div>
     );
 };
 

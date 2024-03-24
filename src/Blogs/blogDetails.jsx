@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import { useLoaderData, Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { MdBookmarkAdd } from "react-icons/md";
+import { saveBlog } from '../ulilies/utility';
 const blogDetails = () => {
     const [tabIndex, setTabIndex]=useState(0)
     const details = useLoaderData();
-    const {published_at, title,tags, reading_time_minutes, comments_count, public_reactions_count } = details;
+    const {published_at, title, reading_time_minutes, comments_count, public_reactions_count } = details;
+    const handleBookmark =blog=>{
+        saveBlog(blog);
+    }
     return (
         <div>
             <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
@@ -30,26 +35,12 @@ const blogDetails = () => {
                             </svg>
                             <span>Author</span>
                         </Link>
+                        <div onClick={()=>handleBookmark(details)} className='bg-primary p-3 ml-5 rounded-full bg-opacity-20 hover:bg-opacity-30 cursor-pointer hover:scale-105 overflow-hidden'>
+                        <MdBookmarkAdd size={25} className='text-secondary'/>
+                        </div>
                     </div>
                     <Outlet></Outlet>
                 </article>
-                <div>
-                    
-                    <div className="space-y-2">
-                        <h4 className="text-lg font-semibold">Related posts</h4>
-                        <ul className="ml-4 space-y-1 list-disc">
-                            <li>
-                                <a rel="noopener noreferrer" href="#" className="hover:underline">Nunc id magna mollis</a>
-                            </li>
-                            <li>
-                                <a rel="noopener noreferrer" href="#" className="hover:underline">Duis molestie, neque eget pretium lobortis</a>
-                            </li>
-                            <li>
-                                <a rel="noopener noreferrer" href="#" className="hover:underline">Mauris nec urna volutpat, aliquam lectus sit amet</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     );

@@ -11,7 +11,7 @@ import Container from "./Container/container.jsx";
 import BlogDetails from './Blogs/blogDetails';
 import Content from "./Components/Content.jsx";
 import Author from "./Components/author.jsx";
-
+import { Toaster } from 'react-hot-toast'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +54,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
+    <Toaster></Toaster>
     <RouterProvider router={router} />
   </>
 );

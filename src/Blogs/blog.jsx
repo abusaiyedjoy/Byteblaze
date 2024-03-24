@@ -19,7 +19,7 @@ const blog = () => {
                     </a>
                     <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {
-                        blog.map(blogs=>
+                        blog.slice(1,19).map(blogs=>
                         <BlogCard blog={blogs} key={blogs.id}></BlogCard>)
                         }
                     </div>
